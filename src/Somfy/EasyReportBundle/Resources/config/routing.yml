@@ -1,0 +1,3 @@
+somfy_easy_report_homepage:
+    path:     /
+    defaults: { _controller: SomfyEasyReportBundle:Default:index }

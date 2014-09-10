@@ -1,0 +1,7 @@
+parameters:
+#    somfy_easy_report.example.class: Somfy\EasyReportBundle\Example
+
+services:
+#    somfy_easy_report.example:
+#        class: %somfy_easy_report.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

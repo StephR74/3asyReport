@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="{{ app.request.locale }}" xml:lang="{{ app.request.locale }}">
+    <head>
+        <title>{% block bundle_title %}3asyReport{% endblock %} - {% block head_title %}{% trans %}accueil{% endtrans %}{% endblock %}</title>
+        
+        {% block bundle_meta %}
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        
+        <meta name="robots" content="index, follow, all" />
+        <meta name="Author" lang="fr" content="Stéphane RAPIN" />
+        <meta name="Language" content="fr"/>
+        <meta name="Copyright" content="Somfy" />
+        <meta name="Publisher" content="Somfy" />
+        <meta name="Description" content="EasyReport - Report maker" />
+        <meta name="Keywords" content="easyreport, somfy, report, data, bg3, access" />
+        {% endblock %}
+        {% block page_meta %}{% endblock %}
+
+        {% block bundle_link %}
+            {% block favicon %}
+            <link rel="shortcut icon" type="image/x-icon" href="{{ asset('bundles/somfyeasyreport/images/favicon.ico') }}" />
+            {% endblock %}
+        {% endblock %}
+        {% block page_link %}{% endblock %}
+
+        {% block app_css %}
+        <link rel="stylesheet" type="text/css" media="all" href="{{ asset('bundles/somfyeasyreport/css/application.css') }}" />
+        <link rel="stylesheet" type="text/css" media="all" href="{{ asset('bundles/somfyeasyreport/css/langue.css') }}" />   
+        <link rel="stylesheet" type="text/css" media="all" href="{{ asset('bundles/somfyeasyreport/css/login.css') }}" />   
+        {% endblock %}
+        {% block bundle_css %}
+        <link rel="stylesheet" type="text/css" media="all" href="{{ asset('bundles/somfyeasyreport/css/default.css') }}" />
+        <link rel="stylesheet" type="text/css" media="all" href="{{ asset('bundles/somfyeasyreport/css/menu.css') }}" />
+        {% endblock %}
+        {% block page_css %}{% endblock %}
+
+        {% block bundle_js %}
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+        <script type="text/javascript" src="{{ asset('bundles/somfyeasyreport/js/default.js') }}"></script>
+        {% endblock %}
+        {% block page_js %}{% endblock %}
+    </head>
+    <body class="{% block body_css_classes %}{% endblock %}">
+    {% block page_body %}
+        <div id="wrapper">
+            <div id="wrapper2">
+                <div id="wrapper3">
+                    <div id="top-menu">
+                        <div id="account">
+                            {% block account %}{% endblock %}
+                        </div>
+                        {% block login_menu %}{% endblock %}
+                        {% block top_menu %}{% endblock %}
+                    </div>
+                    <div id="header">
+                        {% if not app.user %} {# DEBUG #}   
+                        <div id="quick-search">
+                            {% block quick_search %}{% endblock %}
+                        </div>
+                        {% endif %}
+                    
+                        <h1>{% block page_title %}{% trans %}accueil{% endtrans %}{% endblock %}</h1>
+                        
+                        <div id="main-menu">
+                        {% block main_menu %}{% endblock %}
+                        </div>
+                    </div>
+    
+                    {% block main %}
+                    <div id="main" class="{% block main_css_classes %}{% endblock %}">
+                        <div id="sidebar">
+                            {% block sidebar %}{% endblock %}
+                        </div>
+                        <div id="content">
+                            {% block flash_messages %}{% endblock %}
+                            {% block content %}{% endblock %}
+                            <div style="clear:both;"></div>
+                        </div>
+                    </div>
+                    {% endblock %}
+                </div>
+                
+                <div id="ajax-indicator" style="display:none;"><span>{% trans %}chargement{% endtrans %}</span></div>
+                <div id="ajax-modal" style="display:none;"></div>
+    
+                <div id="footer">
+                    {% block footer %}{% endblock %}
+                    <div class="bgl"><div class="bgr">
+                    Powered by 3asyReport &copy; 2014-2014 {% block copyright %}Stéphane Rapin{% endblock %}
+                    </div></div>
+                </div>
+                
+            </div>
+        </div>
+        {% endblock %}
+    </body>
+</html>

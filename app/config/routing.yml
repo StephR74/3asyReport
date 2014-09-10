@@ -1,0 +1,4 @@
+somfy_easy_report:
+    resource: "@SomfyEasyReportBundle/Resources/config/routing.yml"
+    prefix:   /
+
