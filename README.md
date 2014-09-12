@@ -1,8 +1,8 @@
 3asyReport
 ==========
 
-Welcome to 3asyReport - a fully-functional report generator application that you
-can use...[TODO]
+Welcome to 3asyReport - "it will be" a fully-functional report generator
+application that you can use to publish your report...
 
 This document contains information on how to download, install, and start
 using 3asyReport. For a more detailed explanation, see the [Installation][1]
