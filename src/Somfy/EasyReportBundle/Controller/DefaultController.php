@@ -14,14 +14,16 @@ namespace Somfy\EasyReportBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 /**
- * Default controler
+ * This is the "default controler". It's only used to root the user on the web
+ * site home page.
  *
  * @author Stephane Rapin <stephane.rapin@gmail.com>
  */
 class DefaultController extends Controller
 {
     /**
-     * Root to the index page of 3asyReport
+     * Rooting the user on the web site home page (the default index page of
+     * 3asyReport)
      */
     public function indexAction()
     {
